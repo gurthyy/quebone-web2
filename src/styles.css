@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/fontawesome/css/all.css";
+@import "https://fonts.googleapis.com/css?family=Inter&display=swap";
+
+body {
+  background-color: #1f2325;
+  font-family: Inter;
+
+  /* identical to box height, or 147% */
+  letter-spacing: -0.01em;
+
+  color: #eeeeee;
+}
