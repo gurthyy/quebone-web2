@@ -1,10 +1,11 @@
 <header class='custom-header navbar flex-md-nowrap p-2 shadow'>
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 logo" href="#">Quebone</a>
   <div class='navbar-nav'>
-    <form class="form-inline"><button type="button" class="btn btn-primary mr-2"><a href="#"><i class="fal fa-redo"></i>
-          Reset</a></button>
-      <button type="button" class="icon-button btn btn-primary mr-2"><a href="#"><i class="fal fa-cloud-download"></i>
-          Export</a></button>
+    <form class="form-inline">
+      <button mat-button color="primary" (click)="clear('naaackers')" class="btn btn-primary mr-2">
+        Reset</button>
+      <a href="#"><button type="button" class="btn btn-primary mr-2">
+          Export</button></a>
 
     </form>
   </div>

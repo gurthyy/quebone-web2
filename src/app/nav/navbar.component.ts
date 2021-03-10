@@ -1,33 +1,34 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { QuestionsService } from '../shared/questions.service';
+
+
 
 @Component({
   selector: 'nav-bar',
   templateUrl: 'navbar.component.html',
-  styles: [`
-  .custom-header {
-  /* Header */
-
-  /* Auto Layout */
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 16px 32px;
-
-  background-color: #2c2f33;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.06);
-}
-a {
-  color: cyan;
-}
-a:hover {
-  color: darkcyan;
-}
-
-  `]
+  styleUrls: ['navbar.component.css']
 })
 export class NavBarComponent {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
-  ngOnInit() {}
+  ngOnInit() { }
+
+  openClearModal() {
+
+  }
+
+  async clear(user: string) {
+    status;
+    let clearUrl = 'https://api.quebone.app/questions/' + user + '/clear';
+    this.http.delete(clearUrl).subscribe({
+      next: () => {
+          console.log('Delete successful');
+      },
+      error: (error: any) => {
+        console.error('There was an error!', error);
+      }
+  });
+  }
 }
+
