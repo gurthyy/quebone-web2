@@ -6,14 +6,17 @@ import { FormsModule } from '@angular/forms';
 //for use in DateAgoPipe
 import { Pipe, PipeTransform } from '@angular/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ClearWarnModalComponent } from './clear-warn-modal.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+import {MatButtonModule} from '@angular/material/button/'
 
 
 @NgModule({
-  declarations: [DateAgoPipe, ClearWarnModalComponent],
+  declarations: [DateAgoPipe, ConfirmDialogComponent],
   imports: [
-    CommonModule, MatCheckboxModule
+    CommonModule, MatCheckboxModule, MatDialogModule, BrowserAnimationsModule, MatButtonModule
   ],
-  exports:[DateAgoPipe, CommonModule, FormsModule, MatCheckboxModule,]
+  exports:[DateAgoPipe, CommonModule, FormsModule, MatCheckboxModule,MatDialogModule, BrowserAnimationsModule, MatButtonModule]
 })
 export class SharedModule { }

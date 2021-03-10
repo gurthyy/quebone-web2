@@ -1,11 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "./assets/fontawesome/css/all.css";
+/* @import "~bootstrap/dist/css/bootstrap.min.css";
+@import "./assets/fontawesome/css/all.min.css"; */
 @import "https://fonts.googleapis.com/css?family=Inter&display=swap";
 
 body {
   background-color: #1f2325;
-  font-family: Inter;
+  /* font-family: Inter; */
 
   /* identical to box height, or 147% */
   letter-spacing: -0.01em;

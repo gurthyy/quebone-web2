@@ -37,11 +37,6 @@ export class QuestionsService {
     );
   }
 
-  clearQuestion(user: string){
-    let clearUrl = 'https://api.quebone.app/questions/' + user + '/clear';
-    console.log('were in the function at least...')
-    return this.http.get(clearUrl)
-  }
 
   private handleError(err: HttpErrorResponse): Observable<never> {
     let errorMessage = '';
@@ -54,3 +49,5 @@ export class QuestionsService {
     return throwError(errorMessage);
   }
 }
+
+

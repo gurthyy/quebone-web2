@@ -1,6 +1,8 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../shared/questions.service';
+import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -10,25 +12,49 @@ import { QuestionsService } from '../shared/questions.service';
   styleUrls: ['navbar.component.css']
 })
 export class NavBarComponent {
-  constructor(private http: HttpClient) {}
+  result: string = '';
+  constructor(
+    public dialog: MatDialog,
+    private http: HttpClient
+  ) { };
+  confirmDialog(): void{
+    const message = `Are you sure you'd like to clear your question queue? WARNING: THIS CANNOT BE UNDONE.`;
+    const dialogData = new ConfirmDialogModel("Are you sure?", message);
 
-  ngOnInit() { }
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      maxWidth: "400px",
+      data: dialogData
+    });
 
-  openClearModal() {
+    dialogRef.afterClosed().subscribe(dialogResult => {
+      this.result = dialogResult;
+      if (dialogResult === true) {
+        console.log('Dialog Accepted');
+        let user = "naaackers";
 
-  }
-
-  async clear(user: string) {
-    status;
-    let clearUrl = 'https://api.quebone.app/questions/' + user + '/clear';
-    this.http.delete(clearUrl).subscribe({
-      next: () => {
-          console.log('Delete successful');
-      },
-      error: (error: any) => {
-        console.error('There was an error!', error);
+        let clearUrl = 'https://api.quebone.app/questions/' + user + '/clear';
+        this.http.delete(clearUrl).subscribe({
+          next: () => {
+              console.log('Delete successful');
+            location.reload();
+          },
+          error: (error: any) => {
+            console.error('There was an error!', error);
+          }
+        });
+        }
+      if (dialogResult === false) {
+        console.log('Dialog Cancelled');
       }
-  });
+    })
   }
 }
+
+export class ClearQuestions {
+  constructor(private http: HttpClient) { }
+
+
+}
+
+
 
