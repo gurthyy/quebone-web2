@@ -6,6 +6,8 @@ import { MatDialog } from '@angular/material/dialog';
 
 
 
+
+
 @Component({
   selector: 'nav-bar',
   templateUrl: 'navbar.component.html',
@@ -19,7 +21,7 @@ export class NavBarComponent {
   ) { };
   confirmDialog(): void{
     const message = `Are you sure you'd like to clear your question queue? WARNING: THIS CANNOT BE UNDONE.`;
-    const dialogData = new ConfirmDialogModel("Are you sure?", message);
+    const dialogData = new ConfirmDialogModel("Are you sure?", message, 'Cancel', 'Clear');
 
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       maxWidth: "400px",
