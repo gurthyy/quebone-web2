@@ -3,10 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { QuestionsService } from '../shared/questions.service';
 import { ConfirmDialogComponent, ConfirmDialogModel } from '../confirm-dialog/confirm-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
-
-
-
-
+import {faUndo, faCloudDownloadAlt, faSignInAlt} from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'nav-bar',
@@ -14,6 +11,12 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['navbar.component.css']
 })
 export class NavBarComponent {
+  /* Font Awesome Imports */
+  faUndo = faUndo;
+  faCloudDownloadAlt = faCloudDownloadAlt;
+  faSignInAlt = faSignInAlt;
+
+
   result: string = '';
   constructor(
     public dialog: MatDialog,

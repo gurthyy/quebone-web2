@@ -1,14 +1,17 @@
 <header class='custom-header navbar flex-md-nowrap p-2 shadow'>
   <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 logo" href="#">Quebone</a>
   <div class='navbar-nav'>
-    <form class="form-inline">
-      <button type='button' mat-raised-button color="primary" (click)="confirmDialog()" class="">
-        Reset</button>
-      <a href="#"><button type="button" mat-raised-button color="accent" class="">
-          Export</button></a>
-      <a href="#"><button type="button" mat-raised-button color="accent" class="">
-          Login</button></a>
+    <div class="btn-toolbar">
+      <button type='button' mat-raised-button color="primary" (click)="confirmDialog()" class="mr-2">
+        <fa-icon [icon]="faUndo"></fa-icon> Clear
+      </button>
+      <a href="#"><button type="button" mat-raised-button class="mr-2">
+          <fa-icon [icon]="faCloudDownloadAlt"></fa-icon> Export
+        </button></a>
+      <a href="#"><button type="button" mat-raised-button class="mr-2">
+          <fa-icon [icon]="faSignInAlt"></fa-icon> Login
+        </button></a>
 
-    </form>
+    </div>
   </div>
 </header>

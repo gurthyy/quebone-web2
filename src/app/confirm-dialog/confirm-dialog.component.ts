@@ -11,10 +11,15 @@ export class ConfirmDialogComponent {
 
   title: string;
   message: string;
+  cancelText: string;
+  confirmText: string;
+
 
   constructor(public dialogRef: MatDialogRef<ConfirmDialogComponent>, @Inject(MAT_DIALOG_DATA) public data: ConfirmDialogModel) {
     this.title = data.title;
     this.message = data.message
+    this.cancelText = data.cancelText
+    this.confirmText = data.confirmText
   }
 
   onConfirm(): void {
@@ -29,7 +34,7 @@ export class ConfirmDialogComponent {
 }
 
 export class ConfirmDialogModel{
-  constructor(public title: string, public message: string){}
+  constructor(public title: string, public message: string, public cancelText: string, public confirmText: string){}
 }
 
 

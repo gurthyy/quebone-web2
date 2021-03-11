@@ -12,12 +12,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { NavbarModule } from './nav/navbar.module';
 import { ConfirmDialogComponent } from './confirm-dialog/confirm-dialog.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
 @NgModule({
   declarations: [AppComponent, QuestionsComponent, QuestionSnipComponent],
-  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, BrowserAnimationsModule, SharedModule, NavbarModule],
+  imports: [BrowserModule, AppRoutingModule, NgbModule, HttpClientModule, BrowserAnimationsModule, SharedModule, NavbarModule, FontAwesomeModule],
   providers: [QuestionsService],
   entryComponents:[ConfirmDialogComponent],
   bootstrap: [AppComponent],

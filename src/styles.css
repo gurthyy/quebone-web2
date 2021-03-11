@@ -1,6 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-/* @import "~bootstrap/dist/css/bootstrap.min.css";
-@import "./assets/fontawesome/css/all.min.css"; */
+@import "~bootstrap/dist/css/bootstrap.min.css";
 @import "https://fonts.googleapis.com/css?family=Inter&display=swap";
 
 body {

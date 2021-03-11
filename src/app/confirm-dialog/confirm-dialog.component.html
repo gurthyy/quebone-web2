@@ -7,6 +7,6 @@
 </div>
 
 <div mat-dialog-actions>
-  <button mat-button (click)="onDismiss()">Cancel</button>
-  <button mat-raised-button color="warn" (click)="onConfirm()">Confirm</button>
+  <button mat-button (click)="onDismiss()">{{cancelText}}</button>
+  <button mat-raised-button color="warn" (click)="onConfirm()">{{confirmText}}</button>
 </div>
